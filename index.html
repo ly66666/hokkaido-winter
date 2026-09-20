@@ -331,6 +331,126 @@ footer{padding-bottom:120px}
 }
 @media print{.bottom-nav{display:none!important}}
 
+/* ===== V8 editorial travel handbook ===== */
+:root{--serif:"Songti SC","STSong","Noto Serif SC",Georgia,serif;--navy:#102d47;--gold:#d8b875}
+body{font-size:16px;line-height:1.75}
+.wrap{max-width:1180px}
+.topbar{position:sticky;top:0;z-index:70;margin:0 -18px;padding:13px 18px;background:color-mix(in srgb,var(--paper),transparent 7%);backdrop-filter:blur(18px);border-bottom:1px solid color-mix(in srgb,var(--line),transparent 15%)}
+.guide-nav{display:flex;align-items:center;justify-content:center;gap:2px;flex:1}
+.guide-nav a{padding:8px 10px;border-radius:999px;text-decoration:none;color:var(--muted);font-size:12px;white-space:nowrap;transition:background .2s,color .2s}
+.guide-nav a:hover,.guide-nav a.active,.guide-nav a[aria-current="true"]{background:var(--soft);color:var(--accent)}
+.guide-intro{max-width:920px;padding-top:48px}
+.guide-intro-line h2{font-size:clamp(30px,4vw,48px)}
+.guide-intro-line p{max-width:650px;font-size:15px;line-height:1.9}
+.section{padding-top:88px;scroll-margin-top:72px}
+.section-head{align-items:start;margin-bottom:30px}
+.section-head h2{font:500 clamp(30px,4.6vw,52px)/1.2 var(--serif);letter-spacing:.01em}
+.section-head p{max-width:470px;padding-top:12px;font-size:14px;line-height:1.8}
+.section-no{display:block;margin:0 0 9px;font:700 10px/1.3 ui-monospace,monospace;letter-spacing:.2em;color:var(--accent)}
+.panel{border-radius:20px;box-shadow:0 16px 42px rgba(38,70,93,.09)}
+.focus{margin-top:22px;border-radius:24px;padding:34px 38px;background:linear-gradient(135deg,#102d47,#1d526f)}
+#cities{padding-top:52px}
+
+.chapter-kicker{margin:0 0 10px;font:700 10px/1.4 ui-monospace,monospace;letter-spacing:.2em;color:var(--accent)}
+.chapter-lead{max-width:720px;color:var(--muted);font-size:15px;line-height:1.9}
+.city-jump{display:flex;gap:7px;overflow-x:auto;margin:-5px 0 22px;padding:5px 0 9px;scrollbar-width:none}
+.city-jump::-webkit-scrollbar{display:none}
+.city-jump a{flex:none;padding:8px 13px;border:1px solid var(--line);border-radius:999px;text-decoration:none;font-size:12px;background:var(--card)}
+.city-list{display:grid;gap:28px}
+.city-card{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(360px,.92fr);min-height:470px;overflow:hidden;border:1px solid var(--line);border-radius:26px;background:var(--card);box-shadow:0 18px 50px rgba(39,72,95,.1);scroll-margin-top:94px}
+.city-card:nth-child(even) .city-photo{order:2}
+.city-photo{position:relative;min-width:0;min-height:440px;margin:0;overflow:hidden;background:#173d5a}
+.city-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
+.city-card:hover .city-photo img{transform:scale(1.025)}
+.city-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(5,25,43,.62))}
+.city-photo-label{position:absolute;left:24px;right:24px;bottom:21px;z-index:1;color:#fff}
+.city-photo-label small{display:block;font:700 10px/1.4 ui-monospace,monospace;letter-spacing:.18em;opacity:.78}
+.city-photo-label b{font:500 30px/1.3 var(--serif)}
+.city-copy{display:flex;flex-direction:column;justify-content:center;padding:36px 38px}
+.city-copy h3{font:500 32px/1.25 var(--serif);margin:0 0 15px}
+.city-copy>p{font-size:14px;line-height:1.9;color:var(--muted)}
+.city-points{display:grid;gap:10px;margin:10px 0 20px}
+.city-point{padding:11px 0;border-top:1px solid var(--line)}
+.city-point b{display:block;font-size:13px}
+.city-point span{display:block;margin-top:3px;color:var(--muted);font-size:12px;line-height:1.7}
+.city-notes{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:auto}
+.city-note{padding:12px 13px;border-radius:12px;background:var(--soft);font-size:12px;line-height:1.65}
+.city-note b{display:block;margin-bottom:3px;color:var(--accent)}
+.city-daylink{align-self:flex-start;margin-top:15px;text-decoration:none;color:var(--accent);font-size:12px}
+
+.day-grid{grid-template-columns:188px minmax(0,1fr);gap:32px}
+.side-nav{top:86px;padding:9px;border:1px solid var(--line);border-radius:17px;background:var(--card);max-height:calc(100vh - 110px);overflow:auto}
+.side-nav a{border:0;border-radius:10px;padding:9px 10px}
+.side-nav a.active{background:var(--soft)}
+.day{margin-bottom:40px;border-radius:26px}
+.day-header{height:clamp(280px,33vw,390px);padding:0;border:0;color:#fff;overflow:hidden}
+.day-header-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.day-header:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(4,25,43,.82),rgba(9,31,49,.25) 65%,transparent),linear-gradient(0deg,rgba(4,23,40,.7),transparent 58%)}
+.day-header-copy{position:absolute;z-index:2;left:30px;right:28px;bottom:27px;max-width:720px}
+.day-header .eyebrow{color:#d9edf9;margin-bottom:8px}
+.day-header h3{font:500 clamp(29px,4vw,45px)/1.2 var(--serif);color:#fff;margin:0 0 8px}
+.day-header p{color:#e9f3f8;font-size:13px}
+.day-number{z-index:2;top:18px;color:rgba(255,255,255,.42)}
+.day-body{padding:26px 30px 32px}
+.day-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin-bottom:22px}
+.day-stat{padding:12px 13px;border-radius:12px;background:var(--soft)}
+.day-stat small{display:block;color:var(--muted);font-size:10px}
+.day-stat b{display:block;margin-top:4px;font-size:12px;line-height:1.5}
+.day-brief{padding-bottom:22px;border-bottom:1px solid var(--line);font:500 16px/1.85 var(--serif)}
+.day-highlights{display:grid;grid-template-columns:repeat(3,1fr);gap:9px;margin:16px 0 22px}
+.day-highlight{padding:13px;border:1px solid var(--line);border-radius:13px}
+.day-highlight time{display:block;color:var(--accent);font:11px ui-monospace,monospace}
+.day-highlight b{display:block;margin-top:5px;font-size:12px;line-height:1.55}
+.timeline-details{margin-top:16px;border:1px solid var(--line);border-radius:15px;overflow:hidden}
+.timeline-details>summary{display:flex;align-items:center;justify-content:space-between;min-height:54px;padding:14px 18px;list-style:none;cursor:pointer;background:var(--soft);font-size:13px;font-weight:700}
+.timeline-details>summary::-webkit-details-marker{display:none}
+.timeline-details>summary:after{content:"＋";font-size:20px;color:var(--accent)}
+.timeline-details[open]>summary:after{content:"－"}
+.timeline{padding:8px 18px 15px}
+.event{grid-template-columns:78px 1fr;gap:12px}
+.event-time{font-size:12px;color:var(--accent)}
+.event-time small{display:none!important}
+.route-box{margin:14px 0 0}
+.day-bottom{margin-top:16px;padding:18px;border-radius:14px}
+
+.discovery-hero{position:relative;min-height:420px;overflow:hidden;border-radius:26px;background:#153e5c;color:#fff}
+.discovery-hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.discovery-hero:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(5,28,48,.88),rgba(5,28,48,.25))}
+.discovery-copy{position:relative;z-index:1;max-width:560px;padding:58px 52px}
+.discovery-copy h3{font:500 clamp(32px,4vw,48px)/1.25 var(--serif);margin:0 0 15px}
+.discovery-copy p{color:#e5f0f6;line-height:1.9}
+.discovery-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-top:14px}
+.discovery-card{padding:20px;border:1px solid var(--line);border-radius:16px;background:var(--card)}
+.discovery-card small{font:700 10px ui-monospace,monospace;letter-spacing:.15em;color:var(--accent)}
+.discovery-card h3{font:500 20px/1.4 var(--serif);margin:10px 0 8px}
+.discovery-card p{font-size:12px;color:var(--muted);line-height:1.75}
+.photo-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.photo-note{padding:16px;border-radius:14px;background:var(--soft)}
+.photo-note b{display:block;font-size:13px}
+.photo-note p{margin:6px 0 0;color:var(--muted);font-size:12px}
+
+#guide .todo-list{margin-bottom:18px}
+#checklist li{grid-template-columns:24px 30px 1fr;align-items:start}
+#checklist li:before{grid-column:2;grid-row:1}
+#checklist li>input{grid-column:1;grid-row:1;width:18px;height:18px;margin:5px 0 0;accent-color:var(--accent);cursor:pointer}
+#checklist li>div{grid-column:3;grid-row:1}
+#checklist li.done>div{opacity:.62;text-decoration:line-through;text-decoration-thickness:1px}
+#guide-notes{padding-top:34px}
+#guide-notes .section-head h2{font-size:clamp(25px,3.4vw,38px)}
+.bookings{gap:18px}.booking{padding:27px}.tips-grid{grid-template-columns:repeat(2,1fr)}
+footer{margin-top:42px;padding:34px 0 88px;border-top:1px solid var(--line);font-family:var(--serif);font-size:14px;line-height:2}
+.bottom-nav a{height:50px;flex-direction:column;gap:3px;line-height:1.05}
+.bottom-nav .tab-icon{display:block;font-size:15px;font-weight:400;line-height:1}
+@media(min-width:981px){.bottom-nav{display:none!important}footer{padding-bottom:62px}}
+
+@media(max-width:980px){
+  .guide-nav{display:none}.city-card{grid-template-columns:1fr 1fr}.city-copy{padding:28px}.discovery-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:760px){
+  body{font-size:15px}.wrap{padding:0 17px}.topbar{margin:0 -17px;padding:10px 17px}.section{padding-top:65px;scroll-margin-top:58px}.section-head{display:block;margin-bottom:20px}.section-head h2{font-size:31px}.section-head p{padding-top:0;font-size:13px}.guide-intro{padding-top:34px}.guide-intro-line{display:block}.guide-intro-link{display:inline-flex;margin-top:14px}.focus{padding:24px 20px}.city-card,.city-card:nth-child(even){display:block;min-height:0}.city-card:nth-child(even) .city-photo{order:0}.city-photo{height:285px;min-height:0}.city-copy{padding:23px 20px 26px}.city-copy h3{font-size:27px}.city-notes{grid-template-columns:1fr}.day-grid{display:block}.day{border-radius:18px;margin-bottom:31px}.day-header{height:286px}.day-header-copy{left:20px;right:16px;bottom:22px}.day-header h3{font-size:29px}.day-body{padding:19px 16px 23px}.day-stats{gap:5px}.day-stat{padding:10px 8px}.day-stat b{font-size:10px}.day-highlights{grid-template-columns:1fr;gap:6px}.day-highlight{padding:11px 12px}.timeline{padding:6px 11px 13px}.event{grid-template-columns:64px 1fr;gap:6px}.event-content{padding-left:12px}.discovery-hero{min-height:390px}.discovery-copy{padding:38px 24px}.discovery-grid,.photo-notes{grid-template-columns:1fr}.bookings,.tips-grid{grid-template-columns:1fr}#cities{padding-top:42px}.bottom-nav{left:8px;right:8px;width:auto;justify-content:space-around;overflow:visible;transform:translateY(calc(100% + 28px))}.guide-visible .bottom-nav{transform:translateY(0)}.bottom-nav a{min-width:0!important;flex:1;height:50px;padding:0 3px!important;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif!important}
+}
+@media print{.guide-nav,.city-jump{display:none!important}.city-card{break-inside:avoid}.city-photo{min-height:250px}.timeline-details>summary{display:none}.timeline-details>.timeline{display:block}.day-header{height:210px}.discovery-hero{min-height:260px}}
+
 </style>
 </head>
 <body>
@@ -361,7 +481,7 @@ footer{padding-bottom:120px}
   <div class="snowfall-far" id="snowfall-far" aria-hidden="true"></div>
   <div class="cover-nav">
       <a href="#winter-opening" class="cover-mark" aria-label="回到北海道旅行封面"><svg width="40" height="36" viewBox="0 0 84 72" aria-hidden="true"><path d="M11 34 23 19l12-2 8-11 10 6 12 1 7 13-4 9 8 8-6 13-13-1-12 9-10-6-10 4-6-12-10-4z" fill="currentColor"/><path d="m9 60 12-8m-6-12L4 33m51 33 9-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg><span><strong>HOKKAIDO</strong><small>JAPAN</small></span></a>
-      <nav class="cover-nav-links" aria-label="封面快捷导航"><a href="#overview">一场与雪的约定</a><i aria-hidden="true">|</i><a href="#bookings">山海之间</a><i aria-hidden="true">|</i><a href="#itinerary">冬日限定</a><i aria-hidden="true">|</i><a href="#tips">收藏此刻</a></nav>
+      <nav class="cover-nav-links" aria-label="封面快捷导航"><a href="#overview">旅程总览</a><i aria-hidden="true">|</i><a href="#cities">城市图鉴</a><i aria-hidden="true">|</i><a href="#itinerary">九日行程</a><i aria-hidden="true">|</i><a href="#discovery">风味与光</a></nav>
       <a class="cover-mobile-menu" href="#overview" aria-label="前往行程总览">☰</a>
     </div>
 
@@ -371,7 +491,7 @@ footer{padding-bottom:120px}
       <p class="cover-handwriting">Hokkaido Winter Journey</p>
     </div>
     <div class="cover-corner" aria-hidden="true"><span lang="ja">北の大地で、<br>きっとまた会える。</span><small>⌖ 小樽运河　OTARU CANAL</small></div>
-    <a href="#guide-root" class="scroll-invite" id="scroll-invite"><span class="scroll-device" aria-hidden="true">▯</span><span>向上滑动</span><small>开启完整攻略</small><b aria-hidden="true">↓</b></a>
+    <a href="#guide-root" class="scroll-invite" id="scroll-invite"><span>向上滑动</span><small>开启完整攻略</small><b aria-hidden="true">↓</b></a>
 
     <!-- 02/03 白雾遮罩：使用透明 PNG + 柔和 CSS 渐变，不再使用硬边山峰 SVG -->
     <div class="mist-layer" aria-hidden="true">
@@ -396,13 +516,13 @@ footer{padding-bottom:120px}
 
 <main class="guide-root" id="guide-root">
 <div class="wrap">
-<header class="topbar"><a class="brand" href="#winter-opening">HOKKAIDO / WINTER 2027</a><div class="tools"><button id="theme" aria-label="切换页面配色">配色 · 自动</button><button id="save">保存离线版 ↓</button></div></header>
-<div class="guide-intro" aria-label="攻略引言">
+<header class="topbar"><a class="brand" href="#winter-opening">HOKKAIDO / WINTER 2027</a><nav class="guide-nav" aria-label="手册章节导航"><a href="#dashboard">首页</a><a href="#overview">总览</a><a href="#cities">城市</a><a href="#itinerary">行程</a><a href="#discovery">发现</a><a href="#bookings">预订</a><a href="#guide">指南</a></nav><div class="tools"><button id="theme" aria-label="切换页面配色">配色 · 自动</button><button id="save">保存离线版 ↓</button></div></header>
+<div class="guide-intro" id="dashboard" aria-label="攻略引言">
   <div class="guide-intro-eyebrow">WINTER JOURNAL / 2027.01.09—01.17</div>
-  <div class="guide-intro-line"><div><h2>雪国旅行手册 <span>· 9 DAYS / 8 NIGHTS</span></h2><p>从札幌的街灯到函馆的夜色，把沿途的雪与海，收进一份随时可以翻开的攻略。</p></div>
+  <div class="guide-intro-line"><div><h2>九天，向北去看雪 <span>· 9 DAYS / 8 NIGHTS</span></h2><p>从札幌的街灯，到小樽的蓝调、函馆的海，再到登别的温泉。把三个人的冬日旅程，写成一本能在路上随时翻开的手册。</p></div>
   <a href="#itinerary" class="guide-intro-link">查看每日行程 <span aria-hidden="true">↗</span></a></div>
 </div>
-<section class="section" id="overview"><div class="section-head"><h2><span class="section-no">01</span>一路向北</h2><p>7 晚北海道 · 地图仅展示北海道境内地点，羽田住宿详见预订区。</p></div><div class="panel map-panel"><div><svg class="overview-svg geo-map" viewBox="0 0 780 570" role="img" aria-labelledby="geo-title geo-desc" xmlns="http://www.w3.org/2000/svg">
+<section class="section" id="overview"><div class="section-head"><h2><span class="section-no">01 / THE JOURNEY</span>一路向北，山海之间</h2><p>香港转机抵达新千岁，以札幌为四晚基地；小樽当天往返，旭川与美瑛同日出发，随后南下函馆与登别。</p></div><div class="panel map-panel"><div><svg class="overview-svg geo-map" viewBox="0 0 780 570" role="img" aria-labelledby="geo-title geo-desc" xmlns="http://www.w3.org/2000/svg">
 <title id="geo-title">北海道真实海岸线与旅行城市位置静态图</title>
 <desc id="geo-desc">按照真实岛屿海岸线与地点经纬度绘制，显示新千岁机场、札幌、小樽、旭川、美瑛、函馆和登别。跨城连接线仅表示行程顺序与方向，不是精确铁路、公路或巴士轨迹。</desc>
 <rect width="780" height="570" rx="18" fill="#e7f2f8"/>
@@ -416,17 +536,45 @@ footer{padding-bottom:120px}
 </svg><p class="note">北海道静态位置图 · 地点按经纬度标注；连线仅表行程顺序，并非铁路或公路轨迹。</p></div><div class="legend" id="legend"></div></div></section>
 <section class="focus" aria-label="此刻关注"><div><div class="focus-label"><span class="dot"></span>此刻关注 / UP NEXT</div><h2 id="next-title">成都出发，旅程将启</h2><small id="next-time">2027/01/09 05:15 · UTC+8</small><div><a id="next-map" class="button" href="https://www.google.com/maps/dir/?api=1&destination=成都双流国际机场T1&dir_action=navigate" target="_blank" rel="noopener">前往地点 ↗</a><a id="next-day" class="button" href="#day1">查看当天行程 ↓</a></div></div><div><div class="countdown" role="timer" aria-label="距下一事件的倒计时"><div><b id="cd-d">—</b><span>天 DAYS</span></div><div><b id="cd-h">—</b><span>时 HRS</span></div><div><b id="cd-m">—</b><span>分 MIN</span></div><div><b id="cd-s">—</b><span>秒 SEC</span></div></div><p id="count-note" style="font-size:11px;opacity:.7;margin:12px 0 0;text-align:right">按事件所在地时区计算</p></div></section>
 
-<section class="section" id="bookings"><div class="section-head"><h2><span class="section-no">02</span>已经订好的安心</h2><p>航班以订单为准 · 全程 1 间房 / 3 人入住</p></div><div class="bookings"><article class="panel booking"><span class="eyebrow">FLIGHTS / 5 SECTORS</span><h3>从成都出发，再一起回家</h3><div id="flights"></div><p class="note">I = 国际航站楼；D = 国内航站楼。登机口以当天显示为准。所有起降时间均为当地时间。</p></article><article class="panel booking"><span class="eyebrow">STAYS / 8 NIGHTS</span><h3>每一晚，都有落脚处</h3><div id="hotels"></div></article></div><div class="notice"><strong>交通与活动预订状态</strong><p>当前方案使用 JR、巴士、市电与步行，无租车安排。旭川／美瑛一日团、特急北斗指定席及景点门票尚未确认预订。酒店早餐、登别晚餐是否包含，需核对订单套餐。</p></div></section>
-<section class="section" id="itinerary"><div class="section-head"><h2><span class="section-no">03</span>把每一天过成风景</h2><p>航班为固定锚点；其余时刻为计划，随天气与实际班次调整。</p></div><div class="day-grid"><nav id="side-nav" class="side-nav" aria-label="每日行程导航"></nav><div id="days"></div></div></section>
-<section class="section" id="todo"><div class="section-head"><h2><span class="section-no">04</span>出发前，记得这些</h2><p>共同待办 · 完成后统一修改手册</p></div><ol class="panel todo-list"><li><div>确认国泰去程为联程票、行李能否直挂新千岁<small>香港衔接仅 85 分钟。若为分开出票且须入境取行李，应联系航司重新安排；不可照此执行。</small></div></li><li><div>确定 1月9日到双流机场的接送<small>目标 05:15（UTC+8）到 T1；按真实出发地址倒推起床和用车时间，提前确认柜台开放时间。</small></div></li><li><div>预订 1月12日旭山动物园＋美瑛一日团<small>确认集合地点、企鹅活动、午餐、门票和青池是否为夜间点灯线路；以下时间以成团通知替换。</small></div></li><li><div>预订三段 JR 指定席<small>1月13日札幌→函馆、1月15日函馆→登别、1月16日登别→南千岁。查询正式班次与发售日，三人尽量相邻。</small></div></li><li><div>确认登别酒店餐食、入住及早班交通<small>是否一泊二食、晚餐最晚入席时间、早餐能否配合出发；确认 1月16日巴士班次，必要时提前预约出租车。</small></div></li><li><div>检查证件、入境手续和旅行保险<small>每人自行离线保存护照、签证、登机凭证与保险资料。不要上传到公开手册。</small></div></li><li><div>出发前复核冬季开放安排<small>旭山动物园企鹅散步、五棱郭点灯、函馆山缆车、地狱谷步道和景点临时休馆；预约项目以官方要求为准。</small></div></li><li><div>准备防滑鞋、保暖层、网络与离线手册<small>每台手机分别保存 HTML 或打印 PDF；地图导航和外部官网需要联网。</small></div></li></ol></section>
-<section class="section" id="tips"><div class="section-head"><h2><span class="section-no">05</span>雪国旅行的小事</h2><p>给路上的你，一点从容。</p></div><div class="tips-grid"><article class="panel tip"><h3>01 / 暖一点，走慢一点</h3><p>采用贴身层、保暖层、防风防水外层。戴帽子、手套，准备防滑防水鞋；进入室内后及时减衣。</p><p>雪地小步走，坡道预留更多时间。手机和备用电池放内袋；拍照不站在车道上。</p></article><article class="panel tip"><h3>02 / 让天气决定余量</h3><p>跨城以 JR 和一日团为主。巴士所示车程是计划值，降雪、路况与高速封闭都可能延长，不据此安排紧接着的预约。</p><p>暴雪时先保航班和住宿衔接。D8 前一晚查运行状态，准备提早出发；出租车也受路况影响。</p></article><article class="panel tip"><h3>03 / 交通与行李</h3><p>大件行李尽量寄存酒店。特急座位、行李规则和各交通 IC 卡使用范围，以运营方为准。</p><p>羽田 T1 到 T3 需另行转移；酒店与 T3 相连。抵达日先取行李，再按机场指示换航站楼。</p></article><article class="panel tip"><h3>04 / 吃饭与温泉</h3><p>冬天别为一家店长时间排队。准备附近替代餐厅，带少量日元现金。酒店套餐未确认前，不把早餐或晚餐当作已含。</p><p>温泉先洗净再入池，遵守旅馆浴场规则。夜间散步以亮灯、开放的温泉街为限。</p></article><article class="panel tip"><h3>05 / 时间不会走错</h3><p>日本为 JST（UTC+9）；成都和香港为 UTC+8。时差 1 小时，跨时区飞行不能直接相减钟面时间。</p><p>倒计时使用完整日期与时区；配色“自动”跟随设备当地时间，06:00—18:00 使用日间色，其余为夜间色。</p></article><article class="panel tip"><h3>06 / 随时能找到帮助</h3><p>日本报警 <a href="tel:110">110</a>；消防／救护 <a href="tel:119">119</a>。酒店电话见预订区；国际拨号已去掉区号前的 0。</p><p>离线手册不提供实时航变或导航。遇停运先查机场、JR 和航司官方通知，必要时请酒店协助。</p></article></div><details class="panel sources"><summary>开放安排与官方查询入口</summary><ul><li><a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html" target="_blank" rel="noopener">日本内阁府节假日</a>：1月11日为成人之日，D1—D3 跨三连休；热门餐厅与交通留出排队余量。</li><li><a href="https://otaru.gr.jp/citizen/winter-bluecanal-2026" target="_blank" rel="noopener">小樽青之运河</a>：本季公布为 2026/11/1—2027/1/31，日落至 22:30 JST，沿浅草桥至中央桥。</li><li><a href="https://sapporoshi-tokeidai.jp/" target="_blank" rel="noopener">札幌钟楼</a>：官网现行入馆 08:45—17:00 JST；D2 上午安排在此范围，出发前查临时休馆。</li><li><a href="https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/index.html" target="_blank" rel="noopener">旭山动物园</a>：冬季常规 10:30—15:30 JST 作为计划参考，2027 当日开放与企鹅活动须复核。</li><li><a href="https://town.biei.hokkaido.jp/culture/event/illuminate.html" target="_blank" rel="noopener">美瑛青池／白须瀑布</a>：冬季积雪覆盖水面；下午白天游览与夜间点灯是不同体验。</li><li><a href="https://www.goryokaku-tower.co.jp/price/" target="_blank" rel="noopener">五棱郭塔</a>：官网现行 09:00—18:00 JST，售票至 17:50；2027 冬季点灯安排另查官方公告。</li><li><a href="https://334.co.jp/" target="_blank" rel="noopener">函馆山缆车</a> · <a href="https://hako-eco.com/" target="_blank" rel="noopener">函馆市热带植物园</a> · <a href="https://www.tv-tower.co.jp/" target="_blank" rel="noopener">札幌电视塔</a>：当日开放、维护或天气停运请查官网。</li><li><a href="https://www.noboribetsu-spa.jp/" target="_blank" rel="noopener">登别观光</a> · <a href="https://www.hokkaidojingu.or.jp/" target="_blank" rel="noopener">北海道神宫</a>：本行程按普通户外参观安排；免费景点的特殊活动、祈祷或导览可能另需预约。</li><li><a href="https://www.jrhokkaido.co.jp/" target="_blank" rel="noopener">JR 北海道</a> · <a href="https://www.cathaypacific.com/" target="_blank" rel="noopener">国泰航空</a> · <a href="https://www.jal.co.jp/" target="_blank" rel="noopener">日本航空</a> · <a href="https://tokyo-haneda.com/access/travel_between_terminals/index.html" target="_blank" rel="noopener">羽田航站楼转移</a>：运行状态、正式时刻与登机要求。</li></ul></details></section>
-<footer>成都 → 北海道 → 东京 → 成都<br>愿每一次出发，都有一起看雪的人。</footer>
+<section class="section" id="cities" aria-labelledby="cities-title">
+  <div class="section-head"><h2 id="cities-title"><span class="section-no">02 / CITY PORTRAITS</span>六座城市，六种冬天</h2><p>每一站都有自己的性格。这里不增加必须打卡的任务，只把原有路线里的景色、味道与拍摄重点提前展开。</p></div>
+  <nav class="city-jump" aria-label="城市图鉴导航"><a href="#city-sapporo">札幌</a><a href="#city-otaru">小樽</a><a href="#city-asahikawa">旭川</a><a href="#city-biei">美瑛</a><a href="#city-hakodate">函馆</a><a href="#city-noboribetsu">登别</a></nav>
+  <div class="city-list">
+    <article class="city-card" id="city-sapporo"><figure class="city-photo"><img src="./assets/city-sapporo.webp" alt="冬夜中的札幌大通公园与札幌电视塔" loading="lazy" decoding="async"><figcaption class="city-photo-label"><small>SAPPORO / D1—D4</small><b>札幌</b></figcaption></figure><div class="city-copy"><p class="chapter-kicker">FOUR-NIGHT BASE</p><h3>在雪与城市灯火之间</h3><p>旅程从这里慢慢展开。清晨的二条市场有热气腾腾的早餐，大通公园与北海道神宫适合感受冬日城市的呼吸；到了夜里，电视塔、狸小路和薄野把街道点亮。</p><div class="city-points"><div class="city-point"><b>二条市场</b><span>D2 早晨以海鲜丼与热食开启一天，排队太久就换一家。</span></div><div class="city-point"><b>大通公园与电视塔</b><span>同一片街区值得看两次：白天看积雪，夜晚看灯光。</span></div><div class="city-point"><b>北海道神宫</b><span>在圆山公园与神宫之间慢慢走，风雪大时缩短户外停留。</span></div></div><div class="city-notes"><div class="city-note"><b>吃什么</b>汤咖喱、味噌拉面、成吉思汗烤肉。</div><div class="city-note"><b>拍什么</b>大通公园纵深与电视塔的蓝调夜色。</div></div><a class="city-daylink" href="#day2">前往 D2 札幌行程 ↗</a></div></article>
+    <article class="city-card" id="city-otaru"><figure class="city-photo"><img src="./assets/city-otaru.webp" alt="冬季蓝调时刻的小樽运河与仓库群" loading="lazy" decoding="async"><figcaption class="city-photo-label"><small>OTARU / D3</small><b>小樽</b></figcaption></figure><div class="city-copy"><p class="chapter-kicker">CANAL BLUE HOUR</p><h3>把蓝调时刻留给运河</h3><p>小樽的魅力不在赶完几个地点，而在白雪落到仓库屋檐、玻璃器皿反射灯光时的细节。上午看运河雪景，下午走进堺町通，天色转暗前再回到水边。</p><div class="city-points"><div class="city-point"><b>小樽运河</b><span>上午与暮色各看一次，蓝调呈现随天气变化。</span></div><div class="city-point"><b>北一硝子与堺町通</b><span>以玻璃工艺和历史商店街为主，不把体验项目默认成已预约。</span></div><div class="city-point"><b>音乐盒堂与 LeTAO</b><span>慢慢逛、选一份甜点，不为排队耽误回运河。</span></div></div><div class="city-notes"><div class="city-note"><b>吃什么</b>三角市场海鲜丼、寿司与堺町甜点。</div><div class="city-note"><b>拍什么</b>同一机位记录白天积雪和入夜灯影。</div></div><a class="city-daylink" href="#day3">前往 D3 小樽行程 ↗</a></div></article>
+    <article class="city-card" id="city-asahikawa"><figure class="city-photo"><img src="./assets/city-asahikawa.webp" alt="旭山动物园冬季企鹅散步" loading="lazy" decoding="async"><figcaption class="city-photo-label"><small>ASAHIKAWA / D4</small><b>旭川</b></figcaption></figure><div class="city-copy"><p class="chapter-kicker">ANIMALS IN SNOW</p><h3>与雪地里的动物相遇</h3><p>旭山动物园是 D4 一日团的第一站。企鹅散步取决于积雪和动物状态，不能视为固定演出；冬季开放时间短，跟随集合安排比追赶单一展区更重要。</p><div class="city-points"><div class="city-point"><b>企鹅散步</b><span>是否举办、开始时间与路线以园方当日通知为准。</span></div><div class="city-point"><b>北极熊与海豹</b><span>按现场拥挤程度取舍，不为一个展馆打乱集合时间。</span></div><div class="city-point"><b>巴士往返</b><span>暴雪会显著延长车程，随身准备水、零食与充电宝。</span></div></div><div class="city-notes"><div class="city-note"><b>吃什么</b>午餐是否包含，等待一日团套餐确认。</div><div class="city-note"><b>拍什么</b>低机位记录企鹅与雪地，但不越过观览边界。</div></div><a class="city-daylink" href="#day4">前往 D4 一日团行程 ↗</a></div></article>
+    <article class="city-card" id="city-biei"><figure class="city-photo"><img src="./assets/city-biei.webp" alt="美瑛冬季起伏雪原与树木" loading="lazy" decoding="async"><figcaption class="city-photo-label"><small>BIEI / D4</small><b>美瑛</b></figcaption></figure><div class="city-copy"><p class="chapter-kicker">FIELDS OF WHITE</p><h3>雪原来信，安静抵达</h3><p>美瑛冬天最动人的不是颜色，而是白色的层次、丘陵的曲线和树木留下的线条。青池可能被冰雪覆盖，白天与夜间点灯是两种不同体验。</p><div class="city-points"><div class="city-point"><b>白金青池</b><span>本计划为白天冰雪景观，不承诺看到蓝色池水或夜间点灯。</span></div><div class="city-point"><b>白须瀑布</b><span>冰雪与流水并存，桥面结冰时把安全放在取景之前。</span></div><div class="city-point"><b>丘陵雪原</b><span>只在司机允许的安全停靠点拍摄，不进入私人农地。</span></div></div><div class="city-notes"><div class="city-note"><b>看什么</b>雪丘、林带与树的轮廓。</div><div class="city-note"><b>拍什么</b>减少杂物，让白色留白成为主体。</div></div><a class="city-daylink" href="#day4">前往 D4 美瑛行程 ↗</a></div></article>
+    <article class="city-card" id="city-hakodate"><figure class="city-photo"><img src="./assets/city-hakodate.webp" alt="函馆八幡坂冬季坡道与港湾" loading="lazy" decoding="async"><figcaption class="city-photo-label"><small>HAKODATE / D5—D6</small><b>函馆</b></figcaption></figure><div class="city-copy"><p class="chapter-kicker">HILLS, HARBOR & LIGHTS</p><h3>在山与海之间收集灯火</h3><p>函馆把港湾、坡道、朝市和夜景放在一座适合慢走的城市里。第一天优先保证函馆山，第二天再把时间留给朝市、汤之川和雪中的五棱郭。</p><div class="city-points"><div class="city-point"><b>元町与八幡坂</b><span>坡道积雪时小步慢走，拍摄前先确认没有来车。</span></div><div class="city-point"><b>函馆山</b><span>能见度、风况、缆车运行和排队共同决定夜景体验。</span></div><div class="city-point"><b>朝市与五棱郭</b><span>早晨吃海鲜，下午从塔上看五角星形的雪景。</span></div></div><div class="city-notes"><div class="city-note"><b>吃什么</b>海鲜丼、盐味拉面、海鲜与烤乌贼。</div><div class="city-note"><b>拍什么</b>坡道尽头的港湾、山顶灯海和五棱郭几何线条。</div></div><a class="city-daylink" href="#day5">前往 D5–D6 函馆行程 ↗</a></div></article>
+    <article class="city-card" id="city-noboribetsu"><figure class="city-photo"><img src="./assets/city-noboribetsu.webp" alt="冬季登别地狱谷的雪与蒸汽" loading="lazy" decoding="async"><figcaption class="city-photo-label"><small>NOBORIBETSU / D7</small><b>登别</b></figcaption></figure><div class="city-copy"><p class="chapter-kicker">STEAM IN THE SNOW</p><h3>让温泉为旅途收尾</h3><p>从函馆抵达后，不再安排密集景点。沿温泉街走到地狱谷，只走当日开放路径，再把傍晚与夜晚交给旅馆、热汤和休息。</p><div class="city-points"><div class="city-point"><b>地狱谷</b><span>冬季部分栈道可能关闭，不越过任何封闭标志。</span></div><div class="city-point"><b>温泉街</b><span>短途散步即可，风雪大时直接留在旅馆。</span></div><div class="city-point"><b>一泊二食</b><span>早餐、晚餐和最晚入席时间仍需向旅馆确认。</span></div></div><div class="city-notes"><div class="city-note"><b>怎么吃</b>优先确认旅馆餐食，未包含时再安排温泉街餐厅。</div><div class="city-note"><b>拍什么</b>雪、岩壁与蒸汽的冷暖层次。</div></div><a class="city-daylink" href="#day7">前往 D7 登别行程 ↗</a></div></article>
+  </div>
+</section>
+
+<section class="section" id="bookings"><div class="section-head"><h2><span class="section-no">05 / TRAVEL DESK</span>已经订好的安心</h2><p>航班以订单为准 · 全程 1 间房 / 3 人入住</p></div><div class="bookings"><article class="panel booking"><span class="eyebrow">FLIGHTS / 5 SECTORS</span><h3>从成都出发，再一起回家</h3><div id="flights"></div><p class="note">I = 国际航站楼；D = 国内航站楼。登机口以当天显示为准。所有起降时间均为当地时间。</p></article><article class="panel booking"><span class="eyebrow">STAYS / 8 NIGHTS</span><h3>每一晚，都有落脚处</h3><div id="hotels"></div></article></div><div class="notice"><strong>交通与活动预订状态</strong><p>当前方案使用 JR、巴士、市电与步行，无租车安排。旭川／美瑛一日团、特急北斗指定席及景点门票尚未确认预订。酒店早餐、登别晚餐是否包含，需核对订单套餐。</p></div></section>
+<section class="section" id="itinerary"><div class="section-head"><h2><span class="section-no">03 / NINE DAYS</span>把每一天，过成风景</h2><p>先看当天的故事与重点，需要执行时再展开完整时间轴。页面中的行程时刻均为事件发生地当地时间。</p></div><div class="day-grid"><nav id="side-nav" class="side-nav" aria-label="每日行程导航"></nav><div id="days"></div></div></section>
+
+<section class="section" id="discovery" aria-labelledby="discovery-title">
+  <div class="section-head"><h2 id="discovery-title"><span class="section-no">04 / TASTE & LIGHT</span>把北海道，慢慢收藏</h2><p>一碗热汤、一段蓝调，还有落在围巾上的雪。以下内容都来自既定路线，不增加新的强制行程。</p></div>
+  <div class="discovery-hero"><img src="./assets/city-otaru.webp" alt="小樽运河冬季蓝调与暖色灯光" loading="lazy" decoding="async"><div class="discovery-copy"><p class="chapter-kicker" style="color:#d7eaf5">THE SMALL THINGS / OUR WINTER</p><h3>味道会让一段旅程，留得更久。</h3><p>北海道的冬天很适合边走边暖身：札幌的一碗热食、小樽运河之后的甜点、函馆朝市的海鲜，以及登别温泉夜里慢下来的晚餐。</p></div></div>
+  <div class="discovery-grid">
+    <article class="discovery-card"><small>01 / SAPPORO</small><h3>一碗札幌热食</h3><p>二条市场早餐、汤咖喱、味噌拉面或成吉思汗都在原计划内。热门店排队太久，就选择附近替代。</p></article>
+    <article class="discovery-card"><small>02 / OTARU</small><h3>运河之后的一口甜</h3><p>三角市场、堺町通与 LeTAO 适合串成一段慢步行。15:40 后优先返回运河，不为甜点错过暮色。</p></article>
+    <article class="discovery-card"><small>03 / HAKODATE</small><h3>海鲜朝市与夜色</h3><p>函馆朝市吃海鲜丼，晚餐可选盐味拉面、海鲜或烤乌贼。第一天先保证函馆山。</p></article>
+    <article class="discovery-card"><small>04 / NOBORIBETSU</small><h3>把晚餐交给温泉夜</h3><p>这是全程最适合放慢脚步的一晚。旅馆餐食尚待核实，确认之前不按已经包含执行。</p></article>
+  </div>
+  <div class="photo-notes"><article class="photo-note"><b>小樽 · 白天与蓝调</b><p>同一条运河各留一张，拍下积雪与灯光在水面的变化。</p></article><article class="photo-note"><b>美瑛 · 雪原与树</b><p>减少画面元素，只在司机允许的安全停靠点取景。</p></article><article class="photo-note"><b>函馆 · 山海间的灯光</b><p>能见度和缆车运行决定结果，不为一张照片压缩安全余量。</p></article></div>
+</section>
+<section class="section" id="guide"><div class="section-head"><h2><span class="section-no">06 / FIELD GUIDE</span>出发前，逐项确认</h2><p>共同待办与雪国实用指南。清单勾选状态会保存在当前设备中。</p></div><ol class="panel todo-list" id="checklist"><li><div>确认国泰去程为联程票、行李能否直挂新千岁<small>香港衔接仅 85 分钟。若为分开出票且须入境取行李，应联系航司重新安排；不可照此执行。</small></div></li><li><div>确定 1月9日到双流机场的接送<small>目标 05:15（UTC+8）到 T1；按真实出发地址倒推起床和用车时间，提前确认柜台开放时间。</small></div></li><li><div>预订 1月12日旭山动物园＋美瑛一日团<small>确认集合地点、企鹅活动、午餐、门票和青池是否为夜间点灯线路；以下时间以成团通知替换。</small></div></li><li><div>预订三段 JR 指定席<small>1月13日札幌→函馆、1月15日函馆→登别、1月16日登别→南千岁。查询正式班次与发售日，三人尽量相邻。</small></div></li><li><div>确认登别酒店餐食、入住及早班交通<small>是否一泊二食、晚餐最晚入席时间、早餐能否配合出发；确认 1月16日巴士班次，必要时提前预约出租车。</small></div></li><li><div>检查证件、入境手续和旅行保险<small>每人自行离线保存护照、签证、登机凭证与保险资料。不要上传到公开手册。</small></div></li><li><div>出发前复核冬季开放安排<small>旭山动物园企鹅散步、五棱郭点灯、函馆山缆车、地狱谷步道和景点临时休馆；预约项目以官方要求为准。</small></div></li><li><div>准备防滑鞋、保暖层、网络与离线手册<small>每台手机分别保存 HTML 或打印 PDF；地图导航和外部官网需要联网。</small></div></li></ol></section>
+<section class="section" id="guide-notes"><div class="section-head"><h2>雪国旅行的小事</h2><p>不只写记得保暖，也写遇到风雪、晚点和计划变化时怎么处理。</p></div><div class="tips-grid"><article class="panel tip"><h3>01 / 暖一点，走慢一点</h3><p>采用贴身层、保暖层、防风防水外层。戴帽子、手套，准备防滑防水鞋；进入室内后及时减衣。</p><p>雪地小步走，坡道预留更多时间。手机和备用电池放内袋；拍照不站在车道上。</p></article><article class="panel tip"><h3>02 / 让天气决定余量</h3><p>跨城以 JR 和一日团为主。巴士所示车程是计划值，降雪、路况与高速封闭都可能延长，不据此安排紧接着的预约。</p><p>暴雪时先保航班和住宿衔接。D8 前一晚查运行状态，准备提早出发；出租车也受路况影响。</p></article><article class="panel tip"><h3>03 / 交通与行李</h3><p>大件行李尽量寄存酒店。特急座位、行李规则和各交通 IC 卡使用范围，以运营方为准。</p><p>羽田 T1 到 T3 需另行转移；酒店与 T3 相连。抵达日先取行李，再按机场指示换航站楼。</p></article><article class="panel tip"><h3>04 / 吃饭与温泉</h3><p>冬天别为一家店长时间排队。准备附近替代餐厅，带少量日元现金。酒店套餐未确认前，不把早餐或晚餐当作已含。</p><p>温泉先洗净再入池，遵守旅馆浴场规则。夜间散步以亮灯、开放的温泉街为限。</p></article><article class="panel tip"><h3>05 / 时间不会走错</h3><p>日本为 JST（UTC+9）；成都和香港为 UTC+8。时差 1 小时，跨时区飞行不能直接相减钟面时间。</p><p>倒计时使用完整日期与时区；配色“自动”跟随设备当地时间，06:00—18:00 使用日间色，其余为夜间色。</p></article><article class="panel tip"><h3>06 / 随时能找到帮助</h3><p>日本报警 <a href="tel:110">110</a>；消防／救护 <a href="tel:119">119</a>。酒店电话见预订区；国际拨号已去掉区号前的 0。</p><p>离线手册不提供实时航变或导航。遇停运先查机场、JR 和航司官方通知，必要时请酒店协助。</p></article></div><details class="panel sources"><summary>开放安排与官方查询入口</summary><ul><li><a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html" target="_blank" rel="noopener">日本内阁府节假日</a>：1月11日为成人之日，D1—D3 跨三连休；热门餐厅与交通留出排队余量。</li><li><a href="https://otaru.gr.jp/citizen/winter-bluecanal-2026" target="_blank" rel="noopener">小樽青之运河</a>：本季公布为 2026/11/1—2027/1/31，日落至 22:30 JST，沿浅草桥至中央桥。</li><li><a href="https://sapporoshi-tokeidai.jp/" target="_blank" rel="noopener">札幌钟楼</a>：官网现行入馆 08:45—17:00 JST；D2 上午安排在此范围，出发前查临时休馆。</li><li><a href="https://www.city.asahikawa.hokkaido.jp/asahiyamazoo/index.html" target="_blank" rel="noopener">旭山动物园</a>：冬季常规 10:30—15:30 JST 作为计划参考，2027 当日开放与企鹅活动须复核。</li><li><a href="https://town.biei.hokkaido.jp/culture/event/illuminate.html" target="_blank" rel="noopener">美瑛青池／白须瀑布</a>：冬季积雪覆盖水面；下午白天游览与夜间点灯是不同体验。</li><li><a href="https://www.goryokaku-tower.co.jp/price/" target="_blank" rel="noopener">五棱郭塔</a>：官网现行 09:00—18:00 JST，售票至 17:50；2027 冬季点灯安排另查官方公告。</li><li><a href="https://334.co.jp/" target="_blank" rel="noopener">函馆山缆车</a> · <a href="https://hako-eco.com/" target="_blank" rel="noopener">函馆市热带植物园</a> · <a href="https://www.tv-tower.co.jp/" target="_blank" rel="noopener">札幌电视塔</a>：当日开放、维护或天气停运请查官网。</li><li><a href="https://www.noboribetsu-spa.jp/" target="_blank" rel="noopener">登别观光</a> · <a href="https://www.hokkaidojingu.or.jp/" target="_blank" rel="noopener">北海道神宫</a>：本行程按普通户外参观安排；免费景点的特殊活动、祈祷或导览可能另需预约。</li><li><a href="https://www.jrhokkaido.co.jp/" target="_blank" rel="noopener">JR 北海道</a> · <a href="https://www.cathaypacific.com/" target="_blank" rel="noopener">国泰航空</a> · <a href="https://www.jal.co.jp/" target="_blank" rel="noopener">日本航空</a> · <a href="https://tokyo-haneda.com/access/travel_between_terminals/index.html" target="_blank" rel="noopener">羽田航站楼转移</a>：运行状态、正式时刻与登机要求。</li></ul></details></section>
+<footer>成都启程 · 北海道的雪 · 东京归途<br>九天的雪、海与灯火，收藏成我们共同的冬日记忆。</footer>
 </div></main><nav class="bottom-nav" id="bottom-nav" aria-label="快捷导航"></nav><div class="toast" id="toast" role="status" hidden></div>
 <noscript><p style="padding:24px">请启用浏览器 JavaScript 以显示完整逐日行程、预订和倒计时。此文件所需脚本全部内置，不需要联网。</p></noscript>
 <script>
 'use strict';
 const $=id=>document.getElementById(id);
 const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const guideContent=document.querySelector('#guide-root>.wrap');
+guideContent.insertBefore($('itinerary'),$('bookings'));
+guideContent.insertBefore($('discovery'),$('bookings'));
 const P={tianfu:'成都双流国际机场T1',hkg:'Hong Kong International Airport Terminal 1',cts:'New Chitose Airport Domestic Terminal',ctsi:'New Chitose Airport International Terminal',hnd1:'Haneda Airport Terminal 1',hnd3:'Haneda Airport Terminal 3',sapporo:'Sapporo Station Hokkaido',otaru:'Otaru Station Hokkaido',hakodate:'Hakodate Station Hokkaido',noboribetsu:'Noboribetsu Station Hokkaido',minamichitose:'Minami Chitose Station',sh:'Premier Hotel Nakajima Park Sapporo',hh:'Hotel Global View Hakodate',nh:'滝乃家別館 玉乃湯 登別',th:'Villa Fontaine Grand Haneda Airport',nijo:'Nijo Market Sapporo',clock:'Sapporo Clock Tower',odori:'Odori Park Sapporo',shrine:'Hokkaido Jingu Sapporo',maruyama:'Maruyama Park Sapporo',tower:'Sapporo TV Tower',tanuki:'Tanukikoji Shopping Street Sapporo',susukino:'Susukino Sapporo',sankaku:'Sankaku Market Otaru',canal:'Otaru Canal Asakusabashi',sakaimachi:'Sakaimachi Street Otaru',glass:'Kitaichi Glass Sangokan Otaru',music:'Otaru Music Box Museum Main Building',letao:'LeTAO Main Store Otaru',zoo:'Asahiyama Zoo',biei:'Biei Station Hokkaido',pond:'Shirogane Blue Pond Biei',falls:'Shirahige Waterfall Biei',kanemori:'Kanemori Red Brick Warehouse Hakodate',hachiman:'Hachimanzaka Hakodate',church:'Motomachi Roman Catholic Church Hakodate',ropeway:'Hakodate Ropeway Mountain Base Station',mount:'Mount Hakodate Observatory',morning:'Hakodate Morning Market',yunokawa:'Yunokawa Onsen tram stop Hakodate',botanic:'Hakodate Tropical Botanical Garden',footbath:'Yunokawa Onsen Footbath Yumeguri Butai',goryostop:'Goryokaku Koen Mae tram stop',goryo:'Goryokaku Park Hakodate',goryotower:'Goryokaku Tower',onsen:'Noboribetsu Onsen Bus Terminal',hell:'Noboribetsu Jigokudani',garden:'Haneda Airport Garden'};
 function navUrl(key,origin,mode){const u=new URL('https://www.google.com/maps/dir/');u.searchParams.set('api','1');u.searchParams.set('destination',P[key]||key);u.searchParams.set('dir_action','navigate');if(origin)u.searchParams.set('origin',P[origin]||origin);if(mode)u.searchParams.set('travelmode',mode);return u.href}
 function place(key,label){return '<a href="'+esc(navUrl(key))+'" target="_blank" rel="noopener">'+esc(label)+'</a>'}
@@ -453,17 +601,33 @@ const days=[
 function routeUrl(seg){const u=new URL(navUrl(seg[1],seg[0],seg[2]));if(seg[4])u.searchParams.set('waypoints',seg[4].map(k=>P[k]||k).join('|'));return u.href}
 function routeSvg(d){const n=d.route.length,rows=Math.ceil(n/3),height=rows*76+20;let nodes=d.route.map((v,i)=>({x:58+(i%3)*130,y:28+Math.floor(i/3)*76,v}));return '<svg viewBox="0 0 380 '+height+'" role="img" aria-label="第'+d.n+'天路线顺序示意，非等比例地图"><path d="'+nodes.map((p,i)=>(i?'L':'M')+p.x+' '+p.y).join(' ')+'" fill="none" stroke="'+d.color+'" stroke-width="2" stroke-dasharray="4 4"/>'+nodes.map((p,i)=>'<a href="'+esc(navUrl(p.v[0]))+'" target="_blank" rel="noopener"><circle cx="'+p.x+'" cy="'+p.y+'" r="13" fill="var(--card)" stroke="'+d.color+'"/><text x="'+p.x+'" y="'+(p.y+4)+'" text-anchor="middle">'+(i+1)+'</text><text x="'+p.x+'" y="'+(p.y+33)+'" text-anchor="middle">'+esc(p.v[1])+'</text></a>').join('')+'</svg>'}
 const events=[];
-$('days').innerHTML=days.map(d=>{let weekday=new Intl.DateTimeFormat('zh-CN',{weekday:'long',timeZone:'Asia/Tokyo'}).format(new Date(d.date+'T12:00:00+09:00'));let timeline=d.events.map(e=>{const offset=e[6]||'+09:00',tz=offset==='+09:00'?'JST · UTC+9':'UTC+8';events.push({at:Date.parse(d.date+'T'+e[0]+':00'+offset),title:e[2],key:e[4],day:d.n,label:d.date.replaceAll('-','/')+' '+e[0]+' '+tz,planned:e[5]!=='已出票'});return '<div class="event"><div class="event-time"><time datetime="'+d.date+'T'+e[0]+':00'+offset+'">'+e[0]+'</time>'+(e[1]?'<br>– '+e[1]:'')+'<small>'+tz+'</small></div><div class="event-content"><strong>'+place(e[4],e[2])+'</strong>'+(e[5]?'<div><span class="tag '+(e[5]==='已出票'?'':'warn')+'">'+esc(e[5])+'</span></div>':'')+'<p>'+esc(e[3])+'</p></div></div>'}).join('');return '<article class="panel day" id="day'+d.n+'"><header class="day-header"><span class="day-number">0'+d.n+'</span><p class="eyebrow">DAY 0'+d.n+' / JANUARY '+d.date.slice(-2)+'</p><h3>'+d.title+'</h3><p>'+d.date.replaceAll('-','.')+' · '+weekday+'　｜　'+d.theme+'</p></header><details class="route-box"><summary>展开当日路线图与全天导航 ↗</summary><div class="route-inner">'+routeSvg(d)+'<div class="route-links">'+d.segments.map(s=>'<a class="button" href="'+esc(routeUrl(s))+'" target="_blank" rel="noopener">'+s[3]+' ↗</a>').join('')+'</div><p class="note">按顺序打开各段导航。公共交通不支持多途经点，步行段最多 3 个途经点；飞行不生成地面导航。巴士线路仅供参考，不代表自驾安排。</p></div></details><div class="timeline">'+timeline+'</div><div class="day-bottom"><p><strong>今日提醒</strong>　'+esc(d.note)+'</p><p><strong>留一点余地</strong>　'+esc(d.backup)+'</p><p class="stay">'+(d.stay===null?'今晚回家 · 成都':('今晚住这里　'+place(hotels[d.stay].key,hotels[d.stay].name)))+'</p></div></article>'}).join('');
+const dayScenes=['city-sapporo.webp','city-sapporo.webp','city-otaru.webp','city-biei.webp','city-hakodate.webp','city-hakodate.webp','city-noboribetsu.webp','city-sapporo.webp','banner-desktop.webp'];
+const dayAreas=['成都 / 香港 / 札幌','札幌市区','小樽往返','旭川 / 美瑛','札幌 / 函馆','函馆市区','函馆 / 登别','登别 / 新千岁 / 羽田','羽田 / 香港 / 成都'];
+const dayRhythm=['长途飞行','城市慢游','步行较多','一日巴士团','跨城移动','市电与步行','列车＋温泉','返程转场','长途飞行'];
+const dayHighlightIndexes=[[1,3,7],[1,4,11],[2,6,11],[2,4,8],[3,7,10],[1,7,11],[4,8,12],[4,10,14],[1,7,10]];
+$('days').innerHTML=days.map(d=>{
+  const weekday=new Intl.DateTimeFormat('zh-CN',{weekday:'long',timeZone:'Asia/Tokyo'}).format(new Date(d.date+'T12:00:00+09:00'));
+  const timeline=d.events.map(e=>{
+    const offset=e[6]||'+09:00',tz=offset==='+09:00'?'JST · UTC+9':'UTC+8';
+    events.push({at:Date.parse(d.date+'T'+e[0]+':00'+offset),title:e[2],key:e[4],day:d.n,label:d.date.replaceAll('-','/')+' '+e[0]+' '+tz,planned:e[5]!=='已出票'});
+    return '<div class="event"><div class="event-time"><time datetime="'+d.date+'T'+e[0]+':00'+offset+'">'+e[0]+'</time>'+(e[1]?'<br>– '+e[1]:'')+'</div><div class="event-content"><strong>'+place(e[4],e[2])+'</strong>'+(e[5]?'<div><span class="tag '+(e[5]==='已出票'?'':'warn')+'">'+esc(e[5])+'</span></div>':'')+'<p>'+esc(e[3])+'</p></div></div>';
+  }).join('');
+  const highlights=dayHighlightIndexes[d.n-1].map(i=>d.events[Math.min(i,d.events.length-1)]).map(e=>'<div class="day-highlight"><time>'+e[0]+(e[1]?'–'+e[1]:'')+'</time><b>'+esc(e[2])+'</b></div>').join('');
+  const stay=d.stay===null?'今晚回家 · 成都':hotels[d.stay].name;
+  return '<article class="panel day" id="day'+d.n+'"><header class="day-header"><img class="day-header-media" src="./assets/'+dayScenes[d.n-1]+'" alt="'+esc(d.title)+'" loading="lazy" decoding="async"><span class="day-number">0'+d.n+'</span><div class="day-header-copy"><p class="eyebrow">DAY 0'+d.n+' / JANUARY '+d.date.slice(-2)+'</p><h3>'+esc(d.title)+'</h3><p>'+d.date.replaceAll('-','.')+' · '+weekday+'　｜　'+esc(d.theme)+'</p></div></header><div class="day-body"><div class="day-stats"><div class="day-stat"><small>今日区域</small><b>'+dayAreas[d.n-1]+'</b></div><div class="day-stat"><small>行程节奏</small><b>'+dayRhythm[d.n-1]+'</b></div><div class="day-stat"><small>今晚</small><b>'+esc(stay)+'</b></div></div><div class="day-brief">'+esc(d.theme)+'。先看三个重点，需要执行时再展开完整时间轴。</div><p class="chapter-kicker" style="margin-top:20px">TODAY HIGHLIGHTS</p><div class="day-highlights">'+highlights+'</div><details class="timeline-details"><summary>展开完整时间轴</summary><div class="timeline">'+timeline+'</div></details><details class="route-box"><summary>展开当日路线图与全天导航 ↗</summary><div class="route-inner">'+routeSvg(d)+'<div class="route-links">'+d.segments.map(s=>'<a class="button" href="'+esc(routeUrl(s))+'" target="_blank" rel="noopener">'+s[3]+' ↗</a>').join('')+'</div><p class="note">按顺序打开各段导航。公共交通不支持多途经点，步行段最多 3 个途经点；飞行不生成地面导航。巴士线路仅供参考，不代表自驾安排。</p></div></details><div class="day-bottom"><p><strong>今日提醒</strong>　'+esc(d.note)+'</p><p><strong>留一点余地</strong>　'+esc(d.backup)+'</p><p class="stay">'+(d.stay===null?'今晚回家 · 成都':('今晚住这里　'+place(hotels[d.stay].key,hotels[d.stay].name)))+'</p></div></div></article>';
+}).join('');
 $('legend').innerHTML=days.map(d=>'<a href="#day'+d.n+'"><b style="color:'+d.color+'">D'+d.n+'</b><span>'+['抵达札幌','札幌市区','小樽往返','旭川 / 美瑛','札幌 → 函馆','函馆一日','函馆 → 登别','新千岁 → 羽田','香港 → 成都'][d.n-1]+'</span><em>'+['札幌','札幌','札幌','札幌','函馆','函馆','登别','羽田','回家'][d.n-1]+'</em></a>').join('');
 $('side-nav').innerHTML=days.map(d=>'<a href="#day'+d.n+'"><b>0'+d.n+'</b>'+d.title.split('，')[0]+'</a>').join('');
 const bottomNav=$('bottom-nav');
 const bottomNavItems=[
-  ['overview','总览'],
-  ...days.map(d=>['day'+d.n,'D'+d.n]),
-  ['todo','待办'],
-  ['tips','贴士']
+  ['dashboard','首页','⌂'],
+  ['cities','城市','⌖'],
+  ['itinerary','行程','◷'],
+  ['discovery','发现','✦'],
+  ['bookings','预订','✈'],
+  ['guide','指南','☷']
 ];
-bottomNav.innerHTML=bottomNavItems.map(([id,label])=>'<a href="#'+id+'" data-target="'+id+'">'+label+'</a>').join('');
+bottomNav.innerHTML=bottomNavItems.map(([id,label,icon])=>'<a href="#'+id+'" data-target="'+id+'"><span class="tab-icon" aria-hidden="true">'+icon+'</span>'+label+'</a>').join('');
 
 /* ===== V7 bottom-nav state machine =====
  * 只保留一个 active 状态来源：
@@ -485,6 +649,21 @@ const bottomNavState={
 function updateSideNavActive(id){
   document.querySelectorAll('.side-nav a').forEach(a=>{
     const on=a.getAttribute('href')==='#'+id;
+    a.classList.toggle('active',on);
+    if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
+  });
+}
+
+const desktopNavTargets=['dashboard','overview','cities','itinerary','discovery','bookings','guide'].map(id=>[id,$(id)]).filter(([,el])=>Boolean(el));
+function updateDesktopNav(){
+  const activationY=window.scrollY+Math.min(window.innerHeight*.28,240);
+  let current=desktopNavTargets[0]?.[0]||'dashboard';
+  for(const [id,el] of desktopNavTargets){
+    const top=el.getBoundingClientRect().top+window.scrollY;
+    if(top<=activationY+1)current=id;else break;
+  }
+  document.querySelectorAll('.guide-nav a').forEach(a=>{
+    const on=a.getAttribute('href')==='#'+current;
     a.classList.toggle('active',on);
     if(on)a.setAttribute('aria-current','true');else a.removeAttribute('aria-current');
   });
@@ -539,6 +718,7 @@ function syncBottomNavFromScroll(){
   bottomNavState.syncFrame=0;
   if(bottomNavState.lockedTargetId)return;
   setBottomNavActive(getBottomNavActiveFromScroll(),{center:'if-needed',behavior:'auto'});
+  updateDesktopNav();
 }
 
 function requestBottomNavSync(){
@@ -620,6 +800,19 @@ if(bottomNavTargetIds.includes(initialBottomTarget)){
   setBottomNavActive(getBottomNavActiveFromScroll(),{center:false});
 }
 requestAnimationFrame(requestBottomNavSync);
+const checklistItems=[...document.querySelectorAll('#checklist li')];
+let checklistState=[];
+try{checklistState=JSON.parse(localStorage.getItem('northbound-checklist')||'[]')}catch(e){}
+checklistItems.forEach((item,index)=>{
+  const box=document.createElement('input');
+  box.type='checkbox';box.checked=Boolean(checklistState[index]);box.setAttribute('aria-label','标记第 '+(index+1)+' 项为已完成');
+  item.classList.toggle('done',box.checked);item.prepend(box);
+  box.addEventListener('change',()=>{
+    item.classList.toggle('done',box.checked);
+    const state=checklistItems.map(li=>Boolean(li.querySelector('input')?.checked));
+    try{localStorage.setItem('northbound-checklist',JSON.stringify(state))}catch(e){}
+  });
+});
 events.sort((a,b)=>a.at-b.at);
 let selectedEvent=null;
 function tick(){const now=Date.now(),next=events.find(e=>e.at>now);if(!next){$('next-title').textContent='旅程已结束，愿回忆常在';$('next-time').textContent='2027/01/17 22:10 · UTC+8 · 成都';$('next-map').hidden=true;$('next-day').href='#day9';$('count-note').textContent='九天八晚，平安归来';['d','h','m','s'].forEach(k=>$('cd-'+k).textContent='00');return}if(selectedEvent!==next){selectedEvent=next;$('next-title').textContent=next.title;$('next-time').textContent=next.label+(next.planned?' · 计划':' · 已出票');$('next-map').href=navUrl(next.key);$('next-day').href='#day'+next.day;$('count-note').textContent='距下一事件 · 按事件所在地时区计算'}let seconds=Math.max(0,Math.ceil((next.at-now)/1000));const values=[Math.floor(seconds/86400),Math.floor(seconds%86400/3600),Math.floor(seconds%3600/60),seconds%60];['d','h','m','s'].forEach((k,i)=>$('cd-'+k).textContent=String(values[i]).padStart(2,'0'))}
@@ -632,7 +825,8 @@ async function makeEmbeddedCopy(){
  const toastClone=copy.querySelector('#toast');if(toastClone)toastClone.hidden=true;
  let missing=[];
  // Try to embed each original asset (including non-selected mobile source) to retain one-file offline behavior.
- const urls=[...new Set([...document.querySelectorAll('img[data-image-asset],picture source')].flatMap(el=>[(el.getAttribute('src')||el.getAttribute('srcset')||'').trim()]).filter(Boolean))];
+ const assetSelector='img[src^="./assets/"],picture source';
+ const urls=[...new Set([...document.querySelectorAll(assetSelector)].flatMap(el=>[(el.getAttribute('src')||el.getAttribute('srcset')||'').trim()]).filter(Boolean))];
  const encoded=new Map();
  for(const url of urls){
   try{
@@ -642,11 +836,11 @@ async function makeEmbeddedCopy(){
    encoded.set(url,canvas.toDataURL(url.toLowerCase().endsWith('.png')?'image/png':'image/webp',.88));
   }catch(e){missing.push(url)}
  }
- copy.querySelectorAll('img[data-image-asset],picture source').forEach(el=>{
+ copy.querySelectorAll(assetSelector).forEach(el=>{
   for(const attr of ['src','srcset']){const url=el.getAttribute(attr);if(url&&encoded.has(url))el.setAttribute(attr,encoded.get(url))}
  });
  // An absent image should not show as a broken image in the exported document either.
- copy.querySelectorAll('img[data-image-asset]').forEach(el=>{if(!encoded.has(el.getAttribute('src')))el.classList.add('asset-missing')});
+ copy.querySelectorAll('img[src^="./assets/"]').forEach(el=>{if(!encoded.has(el.getAttribute('src')))el.classList.add('asset-missing')});
  return {html:'<!doctype html>\n'+copy.outerHTML,missing};
 }
 $('save').onclick=async()=>{
